@@ -1,0 +1,138 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	
+	<title> Lee Lara Designs | Form</title>
+	<link rel="stylesheet" href="./css/style.css">
+<body>
+	<header>
+	<div class="container">
+		<div id="logo">
+			<h1 id="head"> <span class="highlight">Lee Lara</span> Design </h1>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="./testhtml.html" ">Home</a></li>
+				<li class="current"><a href="./form.html">Form</a></li>
+				<li ><a href="./about.html">About</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+</head>
+
+						
+
+
+						<section id="main">
+							<div class="container">
+								<article id="main-col">
+									<h1 class="page-title">Services</h1>
+									<ul id="services">
+										<li>
+											<h3 id="heading1" onmouseover="changeSize('heading1')" onmouseout="normalSize('heading1')"> Website Design<h3>
+											<p>$300 for three pages</p>
+										</li>
+										<li>
+											<h3 id="heading2" onmouseover="changeSize('heading2')" onmouseout="normalSize('heading2')"> Website Maintenance<h3>
+											<p>$250 Per Month</p>
+										</li>
+										<li>
+											<h3 id="heading3" onmouseover="changeSize('heading3')" onmouseout="normalSize('heading3')"> Website Hosting<h3>
+											<p>$25 Per Month</p>
+										</li>
+									</ul>
+								</article>
+
+
+							<aside id="sidebar">
+								<div class="dark">
+								
+
+									<div>
+ 								 <h1>Order</h1>
+ 								</div>
+ 								<form onsubmit="save_data()" name="form" id="quote" class="quote" method="GET" action="./formresponse.html">
+ 									First Name:<input textarea name="First" placeholder="First Name">
+ 									Last Name:<input textarea name="Last" placeholder="Last Name">
+ 									Services:<input textarea name="Services" placeholder="Service">
+  							
+									<label for="server"> Date of Completion: </label> 
+									<input type='text' name="server" id="saveServer"/>
+ 									
+ 									Comments:<br><textarea style=" width:30%px; height:150px;" name="Extra" placeholder="Keep it Glossy!"></textarea> 
+   									<br>
+   									<br>
+   									
+   									<p> Thank you for using our services we appreciate your business.</p>
+
+   												<br><br> <button type="Submit" class="btn1" value="Save" id="Save" data-theme="a">Submit</button>	
+
+      </form>
+
+	 							</div>
+	 							
+	  						<p></p>
+						</aside>
+					</div>
+					</div>
+				</section>
+
+
+			<footer> FTK Web Design, Copyright &copy;</footer>
+			
+	
+</body>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+	
+	function changeSize(element){
+
+		document.getElementById(element).style.color='white'
+
+	}
+
+	function normalSize(element){
+
+		document.getElementById(element).style.color='black'
+	}
+
+
+  var today = new Date();
+  var expiry = new Date(today.getTime() + 30 * 24 * 3600 * 1000); // plus 30 days
+
+  /*function setCookie(name, value)
+  {
+    document.cookie=name + "=" + escape(value) + "; path=/; expires=" + expiry.toGMTString();
+  }
+
+   function storeValues(form)  
+  {
+
+  	document.getElementById('quote')
+    setCookie("field1", form.field1.value);
+    setCookie("field2", form.field2.value);
+    setCookie("field3", form.field3.value);
+    return true;
+  }*/
+
+
+function save_data() {
+  var input = document.getElementById("saveServer");
+  localStorage.setItem("DOC", input.value); 
+  var storedValue = localStorage.getItem("server"); 
+ 
+}
+
+
+</script>
+
+</html>

@@ -1,0 +1,66 @@
+<html>
+
+<head>
+<title>Form Response</title>
+<style>
+    .input {background-color:white; color:#DCDCDC; font-family:helvetica}
+
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script>
+function getElements() 
+{
+    if (location.search == '')
+        return;
+
+    var elements = {};                                      
+
+    var query_string = location.search;                     
+        query_string = query_string.substring(1);           
+        query_string = unescape(query_string);              
+        query_string = query_string.replace(/\+/g,' ');     
+        query_string = query_string.replace(/\n/g,'<br>');  
+    var allElements  = query_string.split("&");             
+    for (i=0; i < allElements.length; i++)                  
+    {
+        nameValue = allElements[i].split("=");              
+        var name  = nameValue[0];                          
+        var value = nameValue[1];                          
+
+        if (!elements[name])                                
+            elements[name]  = value;                        
+        else
+            elements[name] += ', ' + value;                
+    }           
+
+    return(elements);                   
+}
+
+
+</script>
+</head>
+
+<body bgcolor=Red>
+
+<h1>Customer's Order</h1> 
+
+<script>
+
+    var elements = getElements();           
+    
+    document.write("<table border=1>");
+    document.write("<tr bgcolor=gray><th>Field Name<th>Field Value</tr>");
+
+    for (name in elements)
+    {
+        document.write("<tr><td>"+ name +"<td>"+ elements[name] +"</tr>");
+    }
+    document.write("</table");
+</script>
+
+<br>
+
+        
+
+</body>
+</html>
