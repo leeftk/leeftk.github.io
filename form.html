@@ -35,7 +35,7 @@
 											<p>$300 for three pages</p>
 										</li>
 										<li>
-											<h3 id="heading2" onmouseover="changeSize('heading2')" onmouseout="normalSize('heading2')"> Website Maintenance<h3>
+											<h3 id="heading2" onmouseover="changeSize('heading2')" onmouseout="normalSize('heading2')"> Website Maintanence<h3>
 											<p>$250 Per Month</p>
 										</li>
 										<li>
@@ -57,15 +57,17 @@
  									First Name:<input textarea name="First" placeholder="First Name">
  									Last Name:<input textarea name="Last" placeholder="Last Name">
  									Services:<input textarea name="Services" placeholder="Service">
-  							
-									<label for="server"> Date of Completion: </label> 
-									<input type='text' name="server" id="saveServer"/>
- 									
- 									Comments:<br><textarea style=" width:30%px; height:150px;" name="Extra" placeholder="Keep it Glossy!"></textarea> 
-   									<br>
-   									<br>
-   									
-   									<p> Thank you for using our services we appreciate your business.</p>
+  										
+
+ 								
+
+ 									Comments:<textarea name="Extra" placeholder="Keep it Glossy!"></textarea>
+
+								<label for="server"> Date of Completion: </label> 
+								<input type='text' name="server" id="saveServer"/> 
+   									 <p>Select Services</p>
+   									 <input type='checkbox' checked>Website Design
+   										 <br><input type='checkbox'>Web Maintance
 
    												<br><br> <button type="Submit" class="btn1" value="Save" id="Save" data-theme="a">Submit</button>	
 
@@ -129,7 +131,7 @@ function save_data() {
   var input = document.getElementById("saveServer");
   localStorage.setItem("DOC", input.value); 
   var storedValue = localStorage.getItem("server"); 
- 
+  // etc..
 }
 
 
